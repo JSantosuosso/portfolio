@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Resume — John Santosuosso</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="nav-wrap small">
+<div class="container nav-inner">
+<a class="brand" href="/">Back</a>
+</div>
+</header>
+
+
+<main class="section container">
+<h1>Resume</h1>
+<p>Download the PDF or view the quick highlights below.</p>
+<a class="btn primary" href="assets/resume/resume-placeholder.pdf" download>Download Resume (PDF)</a>
+
+
+<section class="resume-highlights">
+<h2>Highlights</h2>
+<ul>
+<li>Engineering student with hands-on robotics and embedded systems experience</li>
+<li>Designed & built 7 major projects, including autonomous drones and wearable systems</li>
+<li>Proficient in CAD (Creo, SolidWorks), Python, C/C++, MATLAB, and microcontrollers</li>
+</ul>
+</section>
+
+
+<section class="experience">
+<h2>Selected Experience</h2>
+<h3>Project Lead — Follow-Me Drone</h3>
+<p>Designed tracking algorithms and integrated ESP32 communication.</p>
+
+
+<h3>CanSat Team — VT 2024</h3>
+<p>Lead systems integration: sensors, telemetry, and recovery.</p>
+</section>
+</main>
+
+
+<footer class="footer"><div class="container">© 2025 John Santosuosso</div></footer>
+</body>
+</html>
