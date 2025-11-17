@@ -1,52 +1,70 @@
-// =============================
-// Dark Mode Persistence + Slider
-// =============================
+<!-- ================= assets/js/main.js ================= -->
+// small interactive behaviors: mobile nav, dark mode, smooth scroll
 (function(){
-  const root = document.documentElement;
-  const toggle = document.getElementById("darkToggle");
+const body = document.body;
+const menuBtn = document.getElementById('menuBtn');
+const siteNav = document.getElementById('siteNav');
 
-  // Initial Load: Apply stored value immediately
-  if (localStorage.getItem("dark") === "true") {
-    root.classList.add("dark-mode");
+
+if(menuBtn){
+menuBtn.addEventListener('click', ()=>{
+siteNav.classList.toggle('open');
+siteNav.style.display = siteNav.classList.contains('open') ? 'flex' : '';
+});
+}
+
+
+// Dark mode: check localStorage
+const darkPref = localStorage.getItem('dark');
+if(darkPref === 'true') body.classList.add('dark-mode');
+
+
+// Attach dark toggle if present
+const darkToggle = document.getElementById('darkToggle');
+if(darkToggle){
+darkToggle.addEventListener('click', ()=>{
+body.classList.toggle('dark-mode');
+const isDark = body.classList.contains('dark-mode');
+localStorage.setItem('dark', isDark);
+darkToggle.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+});
+// Set initial label
+darkToggle.textContent = body.classList.contains('dark-mode') ? '☀️ Light' : '🌙 Dark';
+}
+
+// Apply dark mode immediately
+if (localStorage.getItem("dark") === "true") {
+  document.documentElement.classList.add("dark-mode");
+}
+
+(function(){
+  const darkToggle = document.getElementById("darkToggle");
+
+  if (darkToggle) {
+    darkToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark-mode");
+      const enabled = document.documentElement.classList.contains("dark-mode");
+      localStorage.setItem("dark", enabled);
+      darkToggle.textContent = enabled ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+
+    // Set initial label
+    darkToggle.textContent = 
+      document.documentElement.classList.contains("dark-mode")
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
   }
-
-  // Update slider state on load
-  function updateSlider(){
-    const enabled = root.classList.contains("dark-mode");
-    toggle.classList.toggle("active", enabled);
-  }
-  updateSlider();
-
-  toggle.addEventListener("click", () => {
-    root.classList.toggle("dark-mode");
-    const enabled = root.classList.contains("dark-mode");
-    localStorage.setItem("dark", enabled);
-    updateSlider();
-  });
 })();
 
-// =============================
-// Scroll-Fade Animation
-// =============================
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click', e=>{
+e.preventDefault();
+const id = a.getAttribute('href');
+const el = document.querySelector(id);
+if(el) el.scrollIntoView({behavior:'smooth'});
+});
 });
 
-document.querySelectorAll('.fade-scroll').forEach(el => observer.observe(el));
 
-// =============================
-// Cursor Glow Tracker
-// =============================
-document.addEventListener("mousemove", e => {
-  document.documentElement.style.setProperty("--cursor-x", e.clientX + "px");
-  document.documentElement.style.setProperty("--cursor-y", e.clientY + "px");
-});
-
-// =============================
-// Mobile Menu (optional future)
-// =============================
-// Add later if you implement hamburger menu
+})();
