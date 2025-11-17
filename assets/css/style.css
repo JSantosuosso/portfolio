@@ -1,17 +1,10 @@
 /* ==========================
-   Ultra-Enhanced style.css
-   Includes:
-   - Animated dark mode switch (slider)
-   - Scroll-trigger fade/slide animations
-   - Page transition animations
-   - Hover glow + cursor follow effect
-   - Animated hero gradient
-   - Component utility classes
-   - Clean organized structure
+   Organized & Cleaned style.css
+   By ChatGPT — optimized for clarity
    ========================== */
 
 /* ----------------------------------
-   1. ROOT VARIABLES & THEMES
+   1. ROOT VARIABLES
    ---------------------------------- */
 :root {
   --bg: #f6f7fb;
@@ -19,40 +12,27 @@
   --text: #0f1724;
   --muted: #6b7280;
   --accent: #0ea5a4;
-  --accent-soft: rgba(14,165,164,0.15);
-  --hero-bg-1: #0f1724;
-  --hero-bg-2: #0ea5a4;
-  --glow: rgba(14,165,164,0.45);
+  --hero-bg: linear-gradient(135deg, #0f1724 0%, #0ea5a4 100%);
 }
 
+/* Dark Mode Variables */
 html.dark-mode {
   --bg: #0b0f15;
   --card: #0f1724;
   --text: #e6eef6;
   --muted: #9aa4b2;
   --accent: #06b6d4;
-  --accent-soft: rgba(6,182,212,0.15);
-  --hero-bg-1: #030712;
-  --hero-bg-2: #0ea5a4;
-  --glow: rgba(6,182,212,0.55);
 }
 
 /* ----------------------------------
-   2. GLOBAL RESET / PAGE TRANSITIONS
+   2. GLOBAL RESET & LAYOUT
    ---------------------------------- */
 body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   line-height: 1.5;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  transition: background .35s ease, color .35s ease;
-  opacity: 0;
-  animation: fadeInPage .6s ease forwards;
-}
-
-@keyframes fadeInPage {
-  to { opacity: 1; }
 }
 
 .container {
@@ -62,38 +42,19 @@ body {
 }
 
 /* ----------------------------------
-   3. ANIMATED CURSOR GLOW
-   ---------------------------------- */
-body::before {
-  content: "";
-  position: fixed;
-  top: var(--cursor-y);
-  left: var(--cursor-x);
-  width: 250px;
-  height: 250px;
-  transform: translate(-50%, -50%);
-  background: var(--glow);
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: -1;
-  transition: background .3s ease;
-}
-
-/* ----------------------------------
-   4. NAVBAR
+   3. NAVIGATION BAR
    ---------------------------------- */
 .nav-wrap {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(6px);
   z-index: 40;
   border-bottom: 1px solid rgba(0,0,0,0.06);
-  transition: background .35s ease;
 }
 
 html.dark-mode .nav-wrap {
-  background: rgba(3,7,18,0.75);
+  background: rgba(15,23,36,0.75);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -120,83 +81,82 @@ html.dark-mode .nav-wrap {
   text-decoration: none;
   padding: .3rem .5rem;
   border-radius: 6px;
-  transition: background .2s;
 }
 
 .site-nav a:hover {
-  background: var(--accent-soft);
+  background: rgba(14,165,164,0.08);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
 }
 
 /* ----------------------------------
-   5. ANIMATED DARK MODE SLIDER SWITCH
-   ---------------------------------- */
-#darkToggle {
-  --toggle-h: 24px;
-  --toggle-w: 48px;
-  width: var(--toggle-w);
-  height: var(--toggle-h);
-  border-radius: 20px;
-  background: rgba(255,255,255,0.4);
-  border: 1px solid rgba(0,0,0,0.12);
-  position: relative;
-  cursor: pointer;
-  transition: background .3s;
-}
-
-#darkToggle::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 50%;
-  transition: transform .3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-
-html.dark-mode #darkToggle {
-  background: rgba(6,182,212,0.4);
-}
-
-html.dark-mode #darkToggle::after {
-  transform: translateX(24px);
-  background: #e6eef6;
-}
-
-/* ----------------------------------
-   6. HERO (Animated Gradient)
+   4. HERO SECTION
    ---------------------------------- */
 .hero {
   padding: 3rem 0;
-  background: linear-gradient(135deg, var(--hero-bg-1), var(--hero-bg-2));
-  background-size: 200% 200%;
-  animation: heroGradient 8s ease infinite;
+  background: var(--hero-bg);
   color: #fff;
-}
-
-@keyframes heroGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 .hero-inner {
   display: flex;
   gap: 2rem;
   align-items: center;
-  animation: fadeUp .7s ease forwards;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.hero-text { flex: 1; }
+.lead { opacity: .95; }
+.cta-row { margin-top: 1rem; }
+
+.btn {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
-.hero h1, 
-.hero p, 
-.hero .lead { color: #fff; }
+.btn.primary {
+  background: #fff;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.metrics {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.metrics div {
+  background: rgba(255,255,255,0.06);
+  padding: .6rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 360px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* Hero text color rules */
+.hero h1,
+.hero p,
+.hero .lead {
+  color: #ffffff;
+}
 
 html.dark-mode .hero h1,
 html.dark-mode .hero p,
@@ -205,8 +165,38 @@ html.dark-mode .hero .lead {
 }
 
 /* ----------------------------------
-   7. CARDS / GRID
+   5. DARK MODE TOGGLE BUTTON
    ---------------------------------- */
+#darkToggle {
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  color: #0f1724;
+  transition: all 0.25s ease;
+}
+
+html.dark-mode #darkToggle {
+  background: rgba(15,23,36,0.75);
+  color: #e6eef6;
+}
+
+#darkToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ----------------------------------
+   6. MAIN GRID / CARDS
+   ---------------------------------- */
+.section { padding: 2rem 0; }
+.section h2 { margin-bottom: .3rem; }
+.section-sub { color: var(--muted); margin-bottom: 1rem; }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -218,26 +208,56 @@ html.dark-mode .hero .lead {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(12,15,20,0.06);
-  transition: transform .25s, box-shadow .25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transform: translateY(0);
+  transition: transform .25s ease, box-shadow .25s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px var(--glow);
+  box-shadow: 0 10px 28px rgba(2,6,23,0.3);
 }
 
-/* Scroll animations */
-.fade-scroll { opacity: 0; transform: translateY(20px); transition: .6s ease; }
-.fade-scroll.visible { opacity: 1; transform: translateY(0); }
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body { padding: 1rem; }
+.card h3 { margin: 0 0 .4rem 0; }
 
 /* ----------------------------------
-   8. BLOG
+   7. SNAPSHOT CARDS
+   ---------------------------------- */
+.snapshot { margin-top: 1rem; }
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1rem;
+}
+
+.snapshot-card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+/* ----------------------------------
+   8. PROJECT PAGES
+   ---------------------------------- */
+.project-page img { margin-bottom: 1rem; }
+
+/* ----------------------------------
+   9. BLOG
    ---------------------------------- */
 .post-list { list-style: none; padding: 0; }
 .post-list li { padding: .5rem 0; }
 
 /* ----------------------------------
-   9. FOOTER
+   10. FOOTER
    ---------------------------------- */
 .footer {
   background: #0f1724;
@@ -248,7 +268,7 @@ html.dark-mode .hero .lead {
 }
 
 /* ----------------------------------
-   10. RESPONSIVE
+   11. RESPONSIVE STYLES
    ---------------------------------- */
 @media(max-width: 900px) {
   .hero-inner { flex-direction: column; }
