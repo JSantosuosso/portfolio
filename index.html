@@ -1,181 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>John Santosuosso — Engineering Portfolio</title>
-<meta name="description" content="Portfolio of John Santosuosso — robotics, embedded systems, CAD, and rapid prototyping." />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Santosuosso — Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+      <a href="#" class="brand">John Santosuosso</a>
+      <nav class="site-nav">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="darkToggle"></button>
+    </div>
+  </header>
 
+  <section class="hero">
+    <div class="container hero-inner fade-scroll">
+      <div class="hero-text">
+        <h1>Engineer • Roboticist • Builder</h1>
+        <p class="lead">Designing physical systems, soft robots, drones, mechanisms, and embedded hardware.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="assets/resume/resume.pdf" download>Download Resume</a>
+          <a class="btn ghost" href="#projects">View Projects</a>
+        </div>
+      </div>
+      <div class="hero-image fade-scroll">
+        <img src="assets/images/placeholder.png" alt="profile placeholder">
+      </div>
+    </div>
+  </section>
 
-<!-- Floating Navbar -->
-<header class="nav-wrap">
-<div class="container nav-inner">
-<button id="darkToggle">🌙 Dark Mode</button>
-<a class="brand" href="/">John Santosuosso</a>
-<button id="menuBtn" class="hamburger" aria-label="Menu">☰</button>
-<nav id="siteNav" class="site-nav">
-<a href="#projects">Projects</a>
-<a href="/portfolio/resume.html">Resume</a>
-<a href="/portfolio/blog/index.html">Blog</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
-</header>
+  <section id="projects" class="section container">
+    <h2>Projects</h2>
+    <p class="section-sub">Engineering projects showcasing robotics, mechanics, aerospace, and fabrication.</p>
+    <div class="grid">
+      <a class="card fade-scroll" href="projects/cansat.html">
+        <img src="assets/images/probe.png">
+        <div class="card-body">
+          <h3>CanSat 2024 Probe</h3>
+          <p>Sub-1kg aerospace probe with carbon fiber, electronics, and avionics.</p>
+        </div>
+      </a>
+      <!-- Additional project cards -->
+    </div>
+  </section>
 
-<!-- Hero -->
-<section class="hero">
-<div class="container hero-inner">
-<div class="hero-text">
-<h1>Engineer • Roboticist • Builder</h1>
-<p class="lead">I design and build robots, embedded systems, and physical prototypes that solve real problems.</p>
-<div class="cta-row">
-<a class="btn primary" href="#projects">See Projects</a>
-<a class="btn ghost" href="assets/resume/John_Santosuosso_CV.pdf" download>Download Resume</a>
-</div>
-<div class="metrics">
-<div><strong>7</strong><span>Major Projects</span></div>
-<div><strong>5+</strong><span>Years Experience</span></div>
-<div><strong>100%</strong><span>Hands-on</span></div>
-</div>
-</div>
-<div class="hero-image">
-<img src="assets/images/placeholder.jpg" alt="placeholder" class="center" width="1000%" />
-</div>
-</div>
-</section>
+  <footer class="footer">
+    © 2025 John Santosuosso
+  </footer>
 
-<!-- Projects -->
-<main>
-<section id="projects" class="section container">
-<h2>Featured Projects</h2>
-<p class="section-sub">Click a card to view details.</p>
-<div class="grid" id="projectGrid">
-
-
-<!-- Project Cards: edit titles/links here -->
-<a class="card" href="projects/cephalobot.html">
-<img src="assets/images/squid.webp" alt="Cephalobot Soft Robotic Squid">
-<div class="card-body">
-<h3>Cephalobot — Soft Robotic Squid</h3>
-<p>Silicone-based pneumatic limbs for biomimetic underwater locomotion.</p>
-</div>
-</a>
-
-
-<a class="card" href="projects/cro.html">
-<img src="assets/images/vtcro_logo.jpg" alt="VT CRO Trimodal Robot">
-<div class="card-body">
-<h3>VT CRO Trimodal Robot</h3>
-<p>Trimodal locomotion: walking, rolling, and swimming—mechanical integration and design.</p>
-</div>
-</a>
-
-
-<a class="card" href="projects/flamethrower.html">
-<img src="assets/images/fireball.gif" alt="Mandalorian Wrist Flamethrower">
-<div class="card-body">
-<h3>Mandalorian Wrist Flamethrower</h3>
-<p>Wearable ignition system with integrated safety and custom fabrication.</p>
-</div>
-</a>
-
-
-<a class="card" href="projects/followme.html">
-<img src="assets/images/wip.jpg" alt="Follow Me Drone">
-<div class="card-body">
-<h3>Follow-Me Drone</h3>
-<p>Autonomous tracking drone using vision and GPS-assisted control.</p>
-</div>
-</a>
-
-
-<a class="card" href="projects/prosthetic.html">
-<img src="assets/images/enable.jpg" alt="e-Nable Prosthetic Hand">
-<div class="card-body">
-<h3>e-Nable Low-Cost Prosthetic</h3>
-<p>3D-printed tendon-driven prosthetic designed for low-cost production.</p>
-</div>
-</a>
-
-
-<a class="card" href="projects/cansat.html">
-<img src="assets/images/probe.png" alt="CanSat Probe">
-<div class="card-body">
-<h3>CanSat 2024 Probe</h3>
-<p>Telemetry-equipped atmospheric probe with controlled descent and sensor suite.</p>
-</div>
-</a>
-
-<a class="card" href="projects/rover.html">
-<img src="assets/images/rover.jpg" alt="Xbee Controlled Rover">
-<div class="card-body">
-<h3>Xbee Controlled Robot</h3>
-<p>Tank drive robot controlled remotely by Xbee radios.</p>
-</div>
-</a>
-
-
-<a class="card" href="projects/cardboard.html">
-<img src="assets/images/bridge.JPG" alt="Cardboard Bridge">
-<div class="card-body">
-<h3>Cardboard Bridge</h3>
-<p>Optimized geometry and load-path design for a competition bridge made of cardboard.</p>
-</div>
-</a>
-
-
-</div>
-</section>
-<!-- Quick Skills / Recruiter Snapshot -->
-<section class="section container snapshot">
-<h2>Quick Snapshot for Recruiters</h2>
-<div class="snapshot-grid">
-<div class="snapshot-card">
-<h3>Top Skills</h3>
-<ul>
-<li>Robotics & Controls</li>
-<li>Embedded Systems (ESP32, Arduino)</li>
-<li>CAD: PTC Creo, SolidWorks</li>
-<li>Fabrication: CNC, 3D Printing</li>
-</ul>
-</div>
-<div class="snapshot-card">
-<h3>What I Bring</h3>
-<p>Full product cycle experience: concept → CAD → prototype → test → iterate. Strong collaborator and quick learner.</p>
-</div>
-<div class="snapshot-card">
-<h3>Contact</h3>
-<p><a href="mailto:jsantosuosso@vt.edu">Email Me</a></p>
-<p><a href="assets/resume/John_Santosuosso_CV.pdf" download>Download Resume (PDF)</a></p>
-</div>
-</div>
-</section>
-  
-<!-- About / Story -->
-<section class="section container">
-<h2>About Me</h2>
-<p>I’m focused on tangible engineering work—robotics, controls, and building systems that work in the real world. I love taking a messy idea and turning it into a tested, working prototype.</p>
-</section>
-
-
-<!-- Contact -->
-<section id="contact" class="section container contact">
-<h2>Contact</h2>
-<p>Email: <a href="mailto:jsantosuosso@vt.edu">jsantosuosso@vt.edu</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/johnsantosuosso/">https://www.linkedin.com/in/johnsantosuosso/</a></p>
-</section>
-</main>
-
-
-<footer class="footer">
-<div class="container">© 2025 John Santosuosso</div>
-</footer>
-
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
