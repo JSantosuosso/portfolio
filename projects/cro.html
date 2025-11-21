@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VT CRO — John Santosuosso</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="nav-wrap small"><div class="container nav-inner"><a class="brand" href="/portfolio/">Back</a></div></header>
+<main class="section container project-page">
+<h1>VT CRO CROLabs Research Project: Trimodal Robot</h1>
+  
+<img src="../assets/images/probe.png" alt="cansat probe" style="width:100%;border-radius:10px;" />
+<img src="../assets/images/cansat_logo.jpg" alt="cansat logo" style="width:180px;margin-top:1rem;" />
+
+<h2>Mission</h2>
+<p>Work in progress! Research and design an autonomous trimodal robot capable of transitioning from modes of land, air, and sea travel without assistance. The robot will be capable of flying 400 ft above ground level (legal limit set by the FAA), diving 16 ft deep, and overland driving. The robot will be powered by an NVIDIA Jetson Nano using ROS and interfacing with Arduino microcontrollers. The goal is to perform reconaissance and mapping, and potentially deliver a payload such as medical supplies to support search and rescue applications.</p>
+  
+<h2>Design Overview</h2>
+<p>The robot is still in development; research is still being conducted. The current plan is to utilize a quadcopter-like design, where propellers will transition to wheels for land-based driving. The blades will be capable of both air and marine travel utilizing a folding mechanism to maximize propulsion efficiency of the current mode. The marine mode will have a variable buoyancy system to adjust depth. Design goals include minimizing size and weight as well as over-actuation.</p>
+
+<h2>My Current Work: Vertical Buoyancy System</h2>
+<p>Using a 500 mL syringe, 45 kg high-torque servo, and PLA to design, 3D print, and assemble a syringe-pump system. To test the system, an ESP32 will control the servo's position, and therefore varying the system's density by taking in ballast water to alter system buoyancy. The necessary components will be waterproofed. An additional water-proofed ESP32 controller using pushbuttons will communicate with the system's controller, creating a tether-free, waterproof connection.</p>
+  
+
+<h2>Reports & Documentation</h2>
+<ul>
+<li><a href="portfolio/assets/docs/Cansat_Final_PDR_Draft.pdf" download>Preliminary Design Report (PDR) — PDF</a></li>
+<li><a href="portfolio/assets/docs/CanSat_2024_Spring_UGR_Submission.pdf" download>UGR Submission Report — PDF</a></li>
+</ul>
+
+
+<h2>Outcome</h2>
+<p>Planning to present research at the MIT Undergraduate Research and Technology Conference (URTC) and National Conference on Undergraduate Research (NCUR).</p>
+<p>Team placed <strong>38th of 100+ teams worldwide</strong> at the NASA & Lockheed Martin–sponsored AAS CanSat competition.</p>
+</main>
+<footer class="footer"><div class="container">© 2025 John Santosuosso</div></footer>
+</body>
+</html>
