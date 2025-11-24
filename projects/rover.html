@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teleoperated Rover + Laser Turret — John Santosuosso</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="nav-wrap small">
+    <div class="container nav-inner">
+      <a class="brand" href="/portfolio/">Back</a>
+    </div>
+  </header>
+
+  <main class="section container project-page">
+    <h1>Teleoperated Rover + Laser Turret</h1>
+
+    <!-- Primary photo (provided) -->
+    <img src="/mnt/data/frontOfRover.jpg" alt="Front view of rover with laser turret" style="width:100%;border-radius:10px;margin-bottom:1rem;" />
+
+    <h2>Project Overview</h2>
+    <p>This tracked rover is a teleoperated platform outfitted with a two-servo laser turret. The turret provides pan + tilt aiming using two hobby servos; aiming commands are sent remotely over XBee radios from a ground station (Arduino Mega + touchscreen). A later prototype replaced the handheld controller with a <em>handXbee</em> setup that streams accelerometer orientation to the rover for intuitive motion-based control.</p>
+
+    <h2>Mission & Purpose</h2>
+    <p>The system served as an R&D platform for remote actuation, human-in-the-loop control experiments, and rapid prototyping of integrated telemetry and servo control. It was intentionally simple and robust to prototypes new user interfaces (touchscreen, accelerometer glove) and to validate XBee comms for low-latency control.</p>
+
+    <h2>Role & Responsibilities</h2>
+    <p><strong>Lead Developer — Teleop Rover</strong><br><em>Design, build, and integration</em></p>
+    <ul>
+      <li>Designed and built the mechanical turret mounting and chassis packaging for two hobby servos and a laser module.</li>
+      <li>Implemented radio communication (XBee) between an Arduino Mega on the rover and multiple ground controller variants (touchscreen UI and the handXbee accelerometer controller).</li>
+      <li>Wired power distribution and the servo control chain, and integrated a touchscreen user interface for manual aiming and drive commands.</li>
+      <li>Iteratively tested and tuned servo PID/positioning for smooth, repeatable turret motion and safe laser operation (low-power visible pointer for demonstration).</li>
+    </ul>
+
+    <h2>Design & Implementation</h2>
+    <h3>Laser Turret (Pan / Tilt)</h3>
+    <p>The turret uses two micro/mini servos in series: one for pan (rotation) mounted to the turret base and a second for tilt (elevation) attached to the laser mount. A lightweight aluminum/3D-printed bracket keeps moments low and reduces servo torque requirements. Key design points:</p>
+    <ul>
+      <li>Minimized moment arm at the tilt axis to reduce required torque.</li>
+      <li>Mechanical hard-stops to prevent servo overtravel and accidental cable snagging.</li>
+      <li>Laser module mounted with a quick-release for safe testing and replacement.</li>
+    </ul>
+
+    <h3>Chassis & Mobility</h3>
+    <p>The rover employs a simple tracked drivetrain (tank-style) for improved traction on rough indoor/outdoor terrain. The chassis was designed to be low-cost and rapidly producible (3D-printed housings + inexpensive hobby tracks). Drive control uses dual-motor H-bridge drivers commanded by the Arduino Mega.</p>
+
+    <h3>Control & Communications</h3>
+    <p>Primary control mode:</p>
+    <ul>
+      <li><strong>Touchscreen UI</strong> — Ground station runs a simple menu on a touchscreen connected to an Arduino Mega (or similar). Joystick and turret control commands are encoded and sent over XBee serial link.</li>
+      <li><strong>HandXbee (accelerometer glove)</strong> — Later prototype streams IMU orientation from a wearable module over XBee; the rover maps hand tilt/rotation to turret aim for intuitive pointing.</li>
+    </ul>
+
+    <h2>Electronics</h2>
+    <ul>
+      <li>Rover: Arduino Mega (flight/mission controller), dual H-bridge motor driver, two hobby servos for turret, XBee radio module, 6V battery pack (regulated for electronics).</li>
+      <li>Ground station: Arduino + touchscreen UI + XBee radio (serial comm), or wearable IMU + XBee for hand control.</li>
+    </ul>
+
+    <h2>Media — Photos & Videos</h2>
+    <p>Photos and test recordings demonstrating the rover, turret, and the handXbee control mode are included below. (These are the original files uploaded from the project.)</p>
+
+    <h3>Rover Photo</h3>
+    <img src="/mnt/data/frontOfRover.jpg" alt="Rover front photo" style="width:100%;border-radius:10px;margin-bottom:0.75rem;" />
+
+    <h3>Demo Video — Rover & Laser Turret</h3>
+    <video controls style="width:100%;border-radius:10px;margin-bottom:0.75rem;">
+      <source src="/mnt/data/rover.MOV" type="video/quicktime">
+      Your browser does not support embedded video. Download: <a href="/mnt/data/rover.MOV" download>rover.MOV</a>
+    </video>
+
+    <h3>Demo Video — HandXbee (accelerometer) Control</h3>
+    <video controls style="width:100%;border-radius:10px;margin-bottom:0.75rem;">
+      <source src="/mnt/data/XbeeHand.mov" type="video/quicktime">
+      Your browser does not support embedded video. Download: <a href="/mnt/data/XbeeHand.mov" download>XbeeHand.mov</a>
+    </video>
+
+    <h2>Manufacturing & Test</h2>
+    <p>Chassis components were 3D printed and assembled with simple standoffs. The turret brackets were iterated to reduce backlash and friction. Testing included:</p>
+    <ul>
+      <li>Servo sweep tests to verify travel and repeatability.</li>
+      <li>Range / latency measurements of XBee command round-trip times under typical operating conditions.</li>
+      <li>Field driving tests to validate track traction and suspension behavior.</li>
+      <li>Safety checks for laser operation (low-power visible pointer only, no hazardous systems used for demos).</li>
+    </ul>
+
+    <h2>Files & Downloads</h2>
+    <ul>
+      <!-- Use the local resume path provided in your workspace -->
+      <li><a href="/mnt/data/John Santosuosso Resume.docx" download>Resume (DOCX)</a></li>
+      <li><a href="/mnt/data/rover.MOV" download>Rover demo video (MOV)</a></li>
+      <li><a href="/mnt/data/XbeeHand.mov" download>HandXbee demo video (MOV)</a></li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <p>The rover provided a flexible testbed for remote control experiments and human-interface evaluation. The touchscreen-based ground station was intuitive for operators, while the handXbee accelerometer control provided an engaging alternative input method, demonstrating the feasibility of motion-based turret aiming over low-latency XBee links.</p>
+
+    <p style="opacity:.9;margin-top:1rem;">Notes: if you want me to extract a thumbnail from the video, convert video formats for web compatibility, or generate compact preview GIFs for the site, I can prepare those and add the optimized assets into <code>assets/images/</code>.</p>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 John Santosuosso</div></footer>
+</body>
+</html>
