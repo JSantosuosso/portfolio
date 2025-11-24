@@ -14,44 +14,45 @@
     <p class="section-sub">Robotics · Soft Actuation · Pneumatics · Manufacturing</p>
 
     <!-- Team logo / placeholder -->
-    <img src="../assets/images/squid.webp" alt="team logo placeholder" style="width:160px;border-radius:8px;margin-bottom:1rem;" />
+    <!--<img src="../assets/images/squid.webp" alt="team logo placeholder" style="width:160px;border-radius:8px;margin-bottom:1rem;" /> -->
 
     <!-- Main render placeholder -->
     <img src="../assets/images/cephalobot.png" alt="Cephalobot render placeholder" style="width:100%;border-radius:10px;margin-bottom:1rem;" />
 
-    <h2>Role & Timeline</h2>
+    <!--<h2>Role & Timeline</h2>
     <p><strong>Robotics Engineer — Cephalobot</strong><br>
     <em>Aug 2025 – Present</em></p>
     <p>Primary focus: full mechanical scope — check valve & bladder fabrication, CAD & structural design, and fluid/pneumatic system design. Led iterative prototyping cycles from CAD to molded silicone bladders and manufactured check valves used in the jet-propulsion system.</p>
+    -->
+    
+    <h2>Project Summary</h2>
+    <p>Work in progress! Part of Soft Robotics course, studying swim mechanics and biomimicry to design a 6" long squid soft robot for a race. Working as part of a 4-person team to design, 3D print molds, cast silicone body and bladder, and manufacture check valves. Utilized bistable geometry to design silicone air bladder, control inflation with Arduino to achieve jet propulsion. Robot is designed to compete in a race to cross a 45"x19"x15" water tank completely submerged.</p>
 
-    <h2>Project Summary (resume blurb)</h2>
-    <p>Part of Soft Robotics course, studying swim mechanics and biomimicry to design a 6" long squid soft robot for a race. Worked as part of a 4-person team to design, 3D print molds, cast silicone body and bladder, and manufacture check valves. Utilized bistable geometry to design silicone air bladder, control inflation with Arduino to achieve jet propulsion.</p>
-
-    <h2>Key Subsystems & My Contributions</h2>
+    <h2>Key Subsystems</h2>
     <h3>1. Pneumatic Bladder Design</h3>
     <img src="../assets/images/bladder.jpg" alt="bladder placeholder" style="width:100%;border-radius:8px;margin-top:.5rem;" />
-    <p>Designed the internal bladder geometry to maximize stroke volume while keeping wall thickness uniform for reliable molding. Iterated bladder shapes to tune thrust per cycle and retraction behavior using silicone shore A rated materials. Worked closely with the team to define vents, fill ports, and mounting features for quick replacement in the field.</p>
+    <p>Designed the internal bladder geometry to maximize stroke volume while keeping wall thickness uniform for reliable molding. The bladder's air supply is controlled by an external regulator, which is controlled by an Arduino. The controlled inflation and deflation of the bladder will be used to intake water and then expel it. The vacuum created by the expulsion of water and the check valves will "pull" in water from the front, which can then be used to repeat the cycle.</p>
 
     <h3>2. Check Valve Fabrication</h3>
     <img src="../assets/images/checkvalve.JPEG" alt="check valve placeholder" style="width:100%;border-radius:8px;margin-top:.5rem;" />
-    <p>Developed 3D-printed valve bodies and tested multiple flap geometries to reduce leakage and pressure loss. Validated designs on the bench with pressure sensors and flow meters, selecting the configuration with the best balance of low forward resistance and rapid sealing.</p>
+    <p>Using thin acetate, water will only be allowed to flow into the chamber through the top intake, and then only allowed to leave through the bottom outtake, optimizing for forward propulsion.</p>
 
-    <h3>3. Structural & CAD Work</h3>
-    <p>Modeled the outer shell and internal ribs in SolidWorks for waterproofing and manufacturability. Designed mounting bosses for pneumatic fittings and ensured the assembly could be machine- or 3D-printed at the lab with minimal post-processing.</p>
+    <h3>3. Nose</h3>
+    <p>The nose is designed for two concepts. The curvature of it is meant to lower drag and then encourage vortices of water to enter the intake. The fins aid in stabilization. The nose is also designed for variable weight distribution. Magnets can be placed in the front to control the orientation of the robot, helping to direct propulsion.</p>
 
     <h2>Manufacturing & Testing</h2>
-    <p>Used 3D printing for molds, silicone casting for bladders, and manual assembly for valves. Performed bench tests measuring thrust, duty cycle, and repeatability. Collected data across multiple bladder geometries to produce the final design used in the competition prototype.</p>
+    <p>Used 3D printing for molds, silicone casting for bladders, and a Cricut for valve films. Currently finishing assembly, and working with the regulator to control inflation of the bladder .</p>
 
-    <h2>Files & Downloads</h2>
+    <!--<h2>Files & Downloads</h2>
     <ul>
       <li><a href="/mnt/data/John Santosuosso Resume.docx" download>Resume (download)</a></li>
       <li><a href="../assets/docs/NCUR Poster.pdf" download>NCUR Poster — PDF</a></li>
-    </ul>
+    </ul>-->
 
     <h2>Outcome</h2>
-    <p>The final Cephalobot prototype demonstrated controllable jet-based thrust and reliable bladder performance over repeated cycles. The check valves and bladder manufacturing process established a repeatable workflow for future iterations and competitions.</p>
+    <p>The final Cephalobot is almost ready, as the race is coming soon in early December (results will be posted here). The bladder performed well with visible bistability when subject to the inhalation and exhalation of a team member. A TPU shell may replace the silicone one for a lighter robot.</p>
 
-    <p style="opacity:.9;margin-top:1rem;">Notes: All images on this page are placeholders — replace <code>assets/images/cephalobot_*.png</code> with your real photos and renders. The page is designed to match the style used by your other project pages.</p>
+    <!--<p style="opacity:.9;margin-top:1rem;">Notes: All images on this page are placeholders — replace <code>assets/images/cephalobot_*.png</code> with your real photos and renders. The page is designed to match the style used by your other project pages.</p>-->
   </main>
 
   <footer class="footer"><div class="container">© 2025 John Santosuosso</div></footer>
