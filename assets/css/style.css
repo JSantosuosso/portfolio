@@ -232,7 +232,7 @@ html.dark-mode #darkToggle {
 /* ----------------------------------
    7. SNAPSHOT CARDS
    ---------------------------------- */
-.snapshot { margin-top: 1rem; }
+/*.snapshot { margin-top: 1rem; }
 .snapshot-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -243,6 +243,41 @@ html.dark-mode #darkToggle {
   background: var(--card);
   padding: 1rem;
   border-radius: 10px;
+}*/
+
+/* === CARD TAG === */
+.card-tag {
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .2rem .4rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: .4rem;
+}
+
+.card-tag.team { background: #0ea5a4; color: white; }
+.card-tag.personal { background: #ef4444; color: white; }
+.card-tag.class { background: #3b82f6; color: white; }
+
+/* === SKILLS LIST === */
+.skills {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem .5rem;
+  margin: .4rem 0 .6rem 0;
+}
+
+.skills li {
+  font-size: .72rem;
+  padding: .2rem .45rem;
+  background: rgba(0,0,0,0.06);
+  border-radius: 6px;
+}
+
+.dark-mode .skills li {
+  background: rgba(255,255,255,0.12);
 }
 
 /* ----------------------------------
