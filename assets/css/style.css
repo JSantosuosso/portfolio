@@ -314,6 +314,18 @@ html.dark-mode #darkToggle {
   aspect-ratio: 9/16;
 }
 
+/* === Global Media Styling for Project Pages === */
+.project-page img,
+.project-page video {
+  width: 100%;               /* Scale to container width */
+  max-width: 900px;          /* Prevent giant media */
+  display: block;            /* Remove inline gaps */
+  margin: 1rem auto;         /* Center + spacing */
+  border-radius: 10px;       /* Keep rounded corners */
+  object-fit: contain;       /* Prevent stretching */
+}
+
+
 /* ----------------------------------
    9. BLOG
    ---------------------------------- */
