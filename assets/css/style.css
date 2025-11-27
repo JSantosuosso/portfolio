@@ -280,6 +280,17 @@ html.dark-mode #darkToggle {
   background: rgba(255,255,255,0.12);
 }
 
+.card-date {
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: .4rem;
+  display: block;
+}
+
+.dark-mode .card-date {
+  color: #c8d0d8;
+}
+
 /* ----------------------------------
    8. PROJECT PAGES
    ---------------------------------- */
