@@ -296,6 +296,16 @@ html.dark-mode #darkToggle {
    ---------------------------------- */
 .project-page img { margin-bottom: 1rem; }
 
+/* Responsive Video */
+.project-page video {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 10px;
+}
+
+
 /* ----------------------------------
    9. BLOG
    ---------------------------------- */
