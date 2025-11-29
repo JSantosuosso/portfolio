@@ -15,13 +15,23 @@
   --hero-bg: linear-gradient(135deg, #0f1724 0%, #0ea5a4 100%);
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Variables 
 html.dark-mode {
   --bg: #0b0f15;
   --card: #0f1724;
   --text: #e6eef6;
   --muted: #9aa4b2;
   --accent: #06b6d4;
+}*/
+
+html.dark-mode {
+  --bg-color: #111;
+  --text-color: #fff;
+}
+
+html.dark-mode body {
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* ----------------------------------
