@@ -27,12 +27,28 @@ html.dark-mode {
 /*html.dark-mode {
   --bg-color: #111;
   --text-color: #fff;
-}*/
+}
 
 html.dark-mode body {
   background: var(--bg-color);
   color: var(--text-color);
+}*/
+
+html {
+  --bg: #ffffff;
+  --text: #000000;
 }
+
+html.dark {
+  --bg: #0f0f0f;
+  --text: #ffffff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
 
 /* ----------------------------------
    2. GLOBAL RESET & LAYOUT
