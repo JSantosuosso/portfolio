@@ -1,29 +1,19 @@
 // =============================
 // Dark Mode Persistence + Slider
 // =============================
-(function(){
-  const root = document.documentElement;
-  const toggle = document.getElementById("darkToggle");
+const toggleBtn = document.getElementById("dark-mode-toggle");
 
-  // Initial Load: Apply stored value immediately
-  if (localStorage.getItem("dark") === "true") {
-    root.classList.add("dark-mode");
+toggleBtn.addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark-mode");
+
+  // Save preference
+  if (document.documentElement.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
   }
+});
 
-  // Update slider state on load
-  function updateSlider(){
-    const enabled = root.classList.contains("dark-mode");
-    toggle.classList.toggle("active", enabled);
-  }
-  updateSlider();
-
-  toggle.addEventListener("click", () => {
-    root.classList.toggle("dark-mode");
-    const enabled = root.classList.contains("dark-mode");
-    localStorage.setItem("dark", enabled);
-    updateSlider();
-  });
-})();
 
 // =============================
 // Scroll-Fade Animation
