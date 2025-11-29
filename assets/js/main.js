@@ -60,6 +60,19 @@ document.addEventListener("mousemove", e => {
   document.documentElement.style.setProperty("--cursor-y", e.clientY + "px");
 });
 
+// Chat Dark Mode Memory
+document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+  const html = document.documentElement;
+
+  html.classList.toggle("dark");
+
+  if (html.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
+
 // =============================
 // Mobile Menu (optional future)
 // =============================
