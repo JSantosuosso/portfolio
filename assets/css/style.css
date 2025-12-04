@@ -83,7 +83,7 @@ html.dark-mode .nav-wrap {
 
 .nav-inner {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   padding: .5rem 0;
 }
