@@ -175,10 +175,10 @@ html.dark-mode .nav-wrap {
 }
 
 .hero-img-caption {
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-muted, #777);
   margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--muted);
 }
 
 
