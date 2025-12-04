@@ -83,9 +83,9 @@ html.dark-mode .nav-wrap {
 
 .nav-inner {
   display: flex;
+  justify-content: flex-end;   /* move everything to the right */
   align-items: center;
-  justify-content: space-between;
-  padding: .5rem 0;
+  gap: 1rem;
 }
 
 .brand {
@@ -173,6 +173,14 @@ html.dark-mode .nav-wrap {
   max-width: 100%;
   border-radius: 12px;
 }
+
+.hero-img-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted, #777);
+  margin-top: 0.5rem;
+}
+
 
 /* Hero text color rules */
 .hero h1,
