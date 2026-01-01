@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>John Santosuosso — Engineering Portfolio</title>
-<meta name="description" content="Portfolio of John Santosuosso — robotics, embedded systems, CAD, and rapid prototyping." />
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>John Santosuosso — Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio of John Santosuosso." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<!-- NAV -->
 <header class="nav-wrap">
-  <div class="container nav-inner wide">
+  <div class="container nav-inner">
     <a class="brand" href="/">John Santosuosso</a>
     <nav class="site-nav">
       <a href="#projects">Projects</a>
@@ -24,84 +22,157 @@
   </div>
 </header>
 
-<!-- COVER / SPLIT -->
-<section class="section container wide intro-layout">
+<main class="cover-layout container">
 
-  <!-- STICKY ABOUT -->
-  <aside class="about-sticky">
+  <!-- ===== STICKY ABOUT COLUMN ===== -->
+  <aside class="about-column">
     <h1>John Santosuosso</h1>
-    <p class="role">Robotics & Mechatronics Engineering @ Virginia Tech</p>
-
-    <p class="about-text">
-      I design and build robotic and electromechanical systems with a focus on
-      CAD, embedded systems, and rapid prototyping.
-      <strong>Seeking Summer 2026 internship.</strong>
+    <p class="about-role">
+      Robotics & Mechatronics Engineering Student<br>
+      Virginia Tech
     </p>
 
-    <div class="about-links">
-      <a href="/portfolio/resume.html">Resume</a>
-      <a href="https://www.linkedin.com/in/johnsantosuosso/">LinkedIn</a>
-      <a href="#contact">Contact</a>
+    <p class="about-blurb">
+      I design and build robots, embedded systems, and physical prototypes.
+      Strong focus on hands-on engineering, iteration, and real-world testing.
+    </p>
+
+    <div class="about-actions">
+      <a class="btn primary" href="/portfolio/resume.html">Resume</a>
+      <a class="btn ghost" href="#contact">Contact</a>
     </div>
   </aside>
 
-  <!-- PROJECTS -->
-  <main id="projects" class="projects-masonry">
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="projects-column">
+    <div class="projects-header">
+      <h2>Selected Work</h2>
+      <p class="section-sub">Click a project to view details.</p>
+    </div>
 
-    <!-- PROJECT CARD -->
-    <a class="card" href="projects/cro.html">
-      <img src="assets/images/vtcro_logo.jpg" alt="VT CRO Robot">
-      <div class="card-body">
-        <div class="card-tag team">Design Team</div>
-        <h3>VT CRO Trimodal Robot</h3>
-        <span class="card-date">Sep 2025 – Present</span>
-        <p>Robot capable of land, air, and sea traversal.</p>
-      </div>
-    </a>
+    <!-- Masonry Grid -->
+    <div class="masonry">
 
-    <a class="card" href="projects/flamethrower.html">
-      <img src="assets/images/fireball.gif" alt="Flamethrower">
-      <div class="card-body">
-        <div class="card-tag personal">Personal</div>
-        <h3>Wrist-Mounted Flamethrower*</h3>
-        <span class="card-date">Oct 2025 – Present</span>
-        <p>Wearable ignition system with safety interlocks.</p>
-      </div>
-    </a>
+      <!-- CARD 1 -->
+      <a class="card" href="projects/cephalobot.html">
+        <img src="assets/images/squid.webp" alt="Cephalobot">
+        <div class="card-body">
+          <div class="card-tag class">Class Project</div>
+          <h3>Cephalobot — Soft Robotic Squid</h3>
+          <span class="card-date">Oct–Dec 2025</span>
+          <ul class="skills">
+            <li>Soft Robotics</li><li>Silicone</li><li>SolidWorks</li>
+          </ul>
+          <p>Biomimetic soft robot using pneumatic bladder actuation.</p>
+        </div>
+      </a>
 
-    <a class="card" href="projects/quikstep.html">
-      <img src="assets/images/quikBanner.png" alt="QuikStep">
-      <div class="card-body">
-        <div class="card-tag class">Class Project</div>
-        <h3>QuikStep</h3>
-        <span class="card-date">Jan 2025 – May 2025</span>
-        <p>Accessibility-focused bed ladder product.</p>
-      </div>
-    </a>
+      <!-- CARD 2 -->
+      <a class="card" href="projects/cro.html">
+        <img src="assets/images/vtcro_logo.jpg" alt="VT CRO">
+        <div class="card-body">
+          <div class="card-tag team">Design Team</div>
+          <h3>VT CRO Trimodal Robot</h3>
+          <span class="card-date">Sep 2025 – Present</span>
+          <ul class="skills">
+            <li>Research</li><li>ESP32</li><li>Fusion360</li>
+          </ul>
+          <p>Research robot capable of land, air, and water locomotion.</p>
+        </div>
+      </a>
 
-    <a class="card" href="projects/cansat.html">
-      <img src="assets/images/probe.png" alt="CanSat">
-      <div class="card-body">
-        <div class="card-tag team">Design Team</div>
-        <h3>CanSat 2024 Probe</h3>
-        <span class="card-date">Aug 2023 – May 2024</span>
-        <p>Telemetry-equipped atmospheric probe.</p>
-      </div>
-    </a>
+      <!-- CARD 3 -->
+      <a class="card" href="projects/flamethrower.html">
+        <img src="assets/images/fireball.gif" alt="Flamethrower">
+        <div class="card-body">
+          <div class="card-tag personal">Personal</div>
+          <h3>Wrist-Mounted Flamethrower*</h3>
+          <span class="card-date">Oct 2025 – Present</span>
+          <ul class="skills">
+            <li>Pneumatics</li><li>Creo</li><li>Safety</li>
+          </ul>
+          <p>Wearable ignition system with layered safety design.</p>
+        </div>
+      </a>
 
-    <!-- ADD ALL OTHER PROJECT CARDS HERE -->
-  </main>
-</section>
+      <!-- CARD 4 -->
+      <a class="card" href="projects/prosthetic.html">
+        <img src="assets/images/enable.jpg" alt="e-NABLE">
+        <div class="card-body">
+          <div class="card-tag team">Design Team</div>
+          <h3>e-NABLE Prosthetic Hand</h3>
+          <span class="card-date">Aug 2024 – Present</span>
+          <ul class="skills">
+            <li>CAD</li><li>Arduino</li><li>3D Printing</li>
+          </ul>
+          <p>Low-cost prosthetic development with internal palm redesign.</p>
+        </div>
+      </a>
 
-<!-- CONTACT -->
-<section id="contact" class="section container wide">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:jsantosuosso@vt.edu">jsantosuosso@vt.edu</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/johnsantosuosso/">Profile</a></p>
-</section>
+      <!-- CARD 5 -->
+      <a class="card" href="projects/quikstep.html">
+        <img src="assets/images/quikBanner.png" alt="QuikStep">
+        <div class="card-body">
+          <div class="card-tag class">Class Project</div>
+          <h3>QuikStep</h3>
+          <span class="card-date">Jan–May 2025</span>
+          <ul class="skills">
+            <li>NX</li><li>FMEA</li><li>C++</li>
+          </ul>
+          <p>Deployable ladder step system for lofted beds.</p>
+        </div>
+      </a>
 
-<footer class="footer">
-  <div class="container wide">© 2025 John Santosuosso</div>
+      <!-- CARD 6 -->
+      <a class="card" href="projects/cansat.html">
+        <img src="assets/images/probe.png" alt="CanSat">
+        <div class="card-body">
+          <div class="card-tag team">Design Team</div>
+          <h3>CanSat 2024 Probe</h3>
+          <span class="card-date">Aug 2023 – May 2024</span>
+          <ul class="skills">
+            <li>Manufacturing</li><li>Aero</li><li>CAD</li>
+          </ul>
+          <p>Atmospheric probe for NASA AAS CanSat competition.</p>
+        </div>
+      </a>
+
+      <!-- CARD 7 -->
+      <a class="card" href="projects/cardboard.html">
+        <img src="assets/images/bridge.JPG" alt="Bridge">
+        <div class="card-body">
+          <div class="card-tag class">Class Project</div>
+          <h3>Cardboard Bridge</h3>
+          <span class="card-date">Spring 2023</span>
+          <ul class="skills">
+            <li>Structures</li><li>Optimization</li>
+          </ul>
+          <p>425+ lb load-bearing cardboard bridge.</p>
+        </div>
+      </a>
+
+      <!-- CARD 8 -->
+      <a class="card" href="projects/rover.html">
+        <img src="assets/images/rover.jpg" alt="Rover">
+        <div class="card-body">
+          <div class="card-tag personal">Personal</div>
+          <h3>XBee-Controlled Rover</h3>
+          <span class="card-date">Sep 2020</span>
+          <ul class="skills">
+            <li>XBee</li><li>Arduino</li><li>Servos</li>
+          </ul>
+          <p>Teleoperated rover with pan-tilt laser turret.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    © 2025 John Santosuosso · jsantosuosso@vt.edu
+  </div>
 </footer>
 
 </body>
