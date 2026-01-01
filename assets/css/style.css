@@ -1,21 +1,15 @@
 /* ==========================
-   Organized & Cleaned style.css
-   By ChatGPT — optimized for clarity
+   style.css — Project-First Layout
    ========================== */
 
-/* ----------------------------------
-   1. ROOT VARIABLES
-   ---------------------------------- */
 :root {
   --bg: #f6f7fb;
   --card: #ffffff;
   --text: #0f1724;
   --muted: #6b7280;
   --accent: #0ea5a4;
-  --hero-bg: linear-gradient(135deg, #0f1724 0%, #0ea5a4 100%);
 }
 
-/* Dark Mode Variables */
 html.dark-mode {
   --bg: #0b0f15;
   --card: #0f1724;
@@ -24,38 +18,11 @@ html.dark-mode {
   --accent: #06b6d4;
 }
 
-/*html.dark-mode {
-  --bg-color: #111;
-  --text-color: #fff;
-}
-
-html.dark-mode body {
-  background: var(--bg-color);
-  color: var(--text-color);
-}*/
-
-html.dark {
-  --bg: #0b0f15;
-  --card: #0f1724;
-  --text: #e6eef6;
-  --muted: #9aa4b2;
-  --accent: #06b6d4;
-}
-
 body {
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-}
-
-/* ----------------------------------
-   2. GLOBAL RESET & LAYOUT
-   ---------------------------------- */
-body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  line-height: 1.5;
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
 }
 
 .container {
@@ -64,34 +31,26 @@ body {
   padding: 1rem;
 }
 
-/* ----------------------------------
-   3. NAVIGATION BAR
-   ---------------------------------- */
+/* NAV */
 .nav-wrap {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,.85);
   backdrop-filter: blur(6px);
-  z-index: 40;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-html.dark-mode .nav-wrap {
-  background: rgba(15,23,36,0.75);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  z-index: 50;
 }
 
 .nav-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: .5rem 0;
+  align-items: center;
 }
 
 .brand {
   font-weight: 700;
-  color: var(--text);
   text-decoration: none;
+  color: var(--text);
 }
 
 .site-nav {
@@ -100,129 +59,66 @@ html.dark-mode .nav-wrap {
 }
 
 .site-nav a {
-  color: var(--text);
   text-decoration: none;
+  color: var(--text);
   padding: .3rem .5rem;
   border-radius: 6px;
 }
 
 .site-nav a:hover {
-  background: rgba(14,165,164,0.08);
+  background: rgba(14,165,164,.1);
 }
 
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
+/* INTRO SPLIT */
+.intro-split {
+  padding-top: 2rem;
 }
 
-/* ----------------------------------
-   4. HERO SECTION
-   ---------------------------------- */
-.hero {
-  padding: 3rem 0;
-  background: var(--hero-bg);
-  color: #fff;
-}
-
-.hero-inner {
-  display: flex;
+.intro-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
   gap: 2rem;
-  align-items: center;
 }
 
-.hero-text { flex: 1; }
-.lead { opacity: .95; }
-.cta-row { margin-top: 1rem; }
+.intro-about h1 {
+  margin-bottom: .3rem;
+}
 
-.btn {
-  display: inline-block;
-  padding: .6rem 1rem;
-  border-radius: 8px;
+.intro-role {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.intro-blurb {
+  margin: .8rem 0 1rem;
+  font-size: .95rem;
+}
+
+.intro-links a {
+  margin-right: .8rem;
+  font-weight: 600;
+  color: var(--accent);
   text-decoration: none;
 }
 
-.btn.primary {
-  background: #fff;
-  color: var(--text);
-  font-weight: 600;
-}
-
-.btn.ghost {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-}
-
-.metrics {
-  display: flex;
-  gap: 1.5rem;
+.view-all {
   margin-top: 1rem;
+  display: inline-block;
 }
 
-.metrics div {
-  background: rgba(255,255,255,0.06);
-  padding: .6rem;
-  border-radius: 8px;
-  text-align: center;
+/* SECTIONS */
+.section {
+  padding: 2rem 0;
 }
 
-.hero-image img {
-  width: 360px;
-  max-width: 100%;
-  border-radius: 12px;
+.section-sub {
+  color: var(--muted);
 }
 
-/* Hero text color rules */
-.hero h1,
-.hero p,
-.hero .lead {
-  color: #ffffff;
-}
-
-html.dark-mode .hero h1,
-html.dark-mode .hero p,
-html.dark-mode .hero .lead {
-  color: #e6eef6;
-}
-
-/* ----------------------------------
-   5. DARK MODE TOGGLE BUTTON
-   ---------------------------------- */
-#darkToggle {
-  padding: 0.45rem 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
-  color: #0f1724;
-  transition: all 0.25s ease;
-}
-
-html.dark-mode #darkToggle {
-  background: rgba(15,23,36,0.75);
-  color: #e6eef6;
-}
-
-#darkToggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* ----------------------------------
-   6. MAIN GRID / CARDS
-   ---------------------------------- */
-.section { padding: 2rem 0; }
-.section h2 { margin-bottom: .3rem; }
-.section-sub { color: var(--muted); margin-bottom: 1rem; }
-
+/* GRID / CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 1rem;
 }
 
@@ -230,17 +126,15 @@ html.dark-mode #darkToggle {
   background: var(--card);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(12,15,20,0.06);
   text-decoration: none;
   color: inherit;
-  display: block;
-  transform: translateY(0);
-  transition: transform .25s ease, box-shadow .25s;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  transition: transform .25s, box-shadow .25s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(2,6,23,0.3);
+  box-shadow: 0 10px 28px rgba(0,0,0,.25);
 }
 
 .card img {
@@ -249,16 +143,32 @@ html.dark-mode #darkToggle {
   object-fit: cover;
 }
 
-.card-body { padding: 1rem; }
-.card h3 { margin: 0 0 .4rem 0; }
+.card-body {
+  padding: 1rem;
+}
 
-/* ----------------------------------
-   7. SNAPSHOT CARDS
-   ---------------------------------- */
-/*.snapshot { margin-top: 1rem; }
+.card-tag {
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .2rem .4rem;
+  border-radius: 6px;
+  margin-bottom: .4rem;
+  display: inline-block;
+}
+
+.card-tag.team { background: #0ea5a4; color: #fff; }
+.card-tag.personal { background: #ef4444; color: #fff; }
+.card-tag.class { background: #3b82f6; color: #fff; }
+
+.card-date {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* SNAPSHOT */
 .snapshot-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
   gap: 1rem;
 }
 
@@ -266,111 +176,19 @@ html.dark-mode #darkToggle {
   background: var(--card);
   padding: 1rem;
   border-radius: 10px;
-}*/
-
-/* === CARD TAG === */
-.card-tag {
-  font-size: .75rem;
-  font-weight: 600;
-  padding: .2rem .4rem;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: .4rem;
 }
 
-.card-tag.team { background: #0ea5a4; color: white; }
-.card-tag.personal { background: #ef4444; color: white; }
-.card-tag.class { background: #3b82f6; color: white; }
-
-/* === SKILLS LIST === */
-.skills {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .3rem .5rem;
-  margin: .4rem 0 .6rem 0;
-}
-
-.skills li {
-  font-size: .72rem;
-  padding: .2rem .45rem;
-  background: rgba(0,0,0,0.06);
-  border-radius: 6px;
-}
-
-.dark-mode .skills li {
-  background: rgba(255,255,255,0.12);
-}
-
-.card-date {
-  font-size: .78rem;
-  color: var(--muted);
-  margin-bottom: .4rem;
-  display: block;
-}
-
-.dark-mode .card-date {
-  color: #c8d0d8;
-}
-
-/* ----------------------------------
-   8. PROJECT PAGES
-   ---------------------------------- */
-.project-page img { margin-bottom: 1rem; }
-
-/* Responsive Video */
-.project-page video {
-  width: 100%;
-  max-width: 900px;
-  display: block;
-  margin: 0 auto 1rem auto;
-  border-radius: 10px;
-}
-.project-page video {
-  object-fit: contain;
-  aspect-ratio: 16/9;
-}
-
-.project-page video {
-  object-fit: contain;
-  aspect-ratio: 9/16;
-}
-
-/* === Global Media Styling for Project Pages === */
-.project-page img,
-.project-page video {
-  width: 100%;               /* Scale to container width */
-  max-width: 900px;          /* Prevent giant media */
-  display: block;            /* Remove inline gaps */
-  margin: 1rem auto;         /* Center + spacing */
-  border-radius: 10px;       /* Keep rounded corners */
-  object-fit: contain;       /* Prevent stretching */
-}
-
-
-/* ----------------------------------
-   9. BLOG
-   ---------------------------------- */
-.post-list { list-style: none; padding: 0; }
-.post-list li { padding: .5rem 0; }
-
-/* ----------------------------------
-   10. FOOTER
-   ---------------------------------- */
+/* FOOTER */
 .footer {
   background: #0f1724;
   color: #fff;
-  padding: 1.5rem;
-  margin-top: 2rem;
   text-align: center;
+  padding: 1.5rem;
 }
 
-/* ----------------------------------
-   11. RESPONSIVE STYLES
-   ---------------------------------- */
-@media(max-width: 900px) {
-  .hero-inner { flex-direction: column; }
-  .site-nav { display: none; }
-  .hamburger { display: block; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
 }
