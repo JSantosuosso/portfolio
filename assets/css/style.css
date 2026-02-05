@@ -172,3 +172,24 @@ body {
     margin-bottom: 2rem;
   }
 }
+
+/* ==================================
+   CONTENT PAGES (NON-HOME)
+   ================================== */
+
+.content-page {
+  padding: 3rem 1rem;
+}
+
+.content-inner {
+  max-width: 900px;     /* Ideal reading width */
+  margin: 0 auto;       /* Centers content */
+}
+
+/* Slightly wider on large screens */
+@media (min-width: 1200px) {
+  .content-inner {
+    max-width: 1000px;
+  }
+}
+
