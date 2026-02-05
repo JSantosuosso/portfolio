@@ -29,7 +29,10 @@
     <h1>Teleoperated Rover + Laser Turret</h1>
 
     <!-- Primary photo (provided) -->
-    <img src="/portfolio/assets/images/frontOfRover.jpg" alt="Front view of rover with laser turret" />
+<figure>
+  <img src="../assets/images/frontOfRover.jpg" alt="XBee-controlled rover prototype">
+  <figcaption>Early rover prototype with pan-tilt laser system</figcaption>
+</figure>
 
     <h2>Project Overview</h2>
     <p>This is my first major project, a tank-drive rover is a teleoperated platform outfitted with a two-servo laser turret. This was meant to be fun, and a good way to allow my family and my dog to interact with my new interest. The turret provides pan + tilt aiming using two hobby servos; aiming commands are sent remotely over XBee radios from a ground station (Arduino Mega + touchscreen shield). A later prototype replaced the handheld controller with a wearable setup (see below) that streams accelerometer orientation to the rover for intuitive motion-based control.</p>
@@ -76,13 +79,12 @@
     </video>
 
     <h3>Demo Video — HandXbee (accelerometer) Control</h3>
-    <video controls>
-    <source src="../assets/images/XbeeHand.mp4" type="video/mp4">
-    <source src="../assets/images/XbeeHand.mov" type="video/quicktime">
-    Your browser does not support embedded video. Download:
-    <a href="../assets/videos/XbeeHand.mov" download>XbeeHand.mov</a>
-    </video>
-
+    <figure>
+      <video class="horizontal" controls>
+        <source src="../assets/videos/rover-demo.mp4" type="video/mp4">
+      </video>
+      <figcaption>Accelerometer glove controlling turret movement</figcaption>
+    </figure>
 
     <!--<h2>Manufacturing & Test</h2>
     <p>Chassis components were 3D printed and assembled with simple standoffs. The turret brackets were iterated to reduce backlash and friction. Testing included:</p>
