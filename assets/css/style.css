@@ -374,3 +374,78 @@ html.dark-mode #darkToggle {
   .site-nav { display: none; }
   .hamburger { display: block; }
 }
+
+/* =========================================================
+   5 + 4 PROJECT GRID (9 CARDS TOTAL)
+   ========================================================= */
+
+#projectGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+/* Make cards compact so all fit */
+#projectGrid .card img {
+  height: 110px;
+}
+
+#projectGrid .card-body {
+  padding: 0.55rem;
+}
+
+#projectGrid h3 {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+#projectGrid p {
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+/* ---- CENTER THE BOTTOM ROW (CARDS 6–9) ---- */
+
+/* Card 6 → column 2 */
+#projectGrid .card:nth-child(6) {
+  grid-column: 2;
+}
+
+/* Card 7 → column 3 */
+#projectGrid .card:nth-child(7) {
+  grid-column: 3;
+}
+
+/* Card 8 → column 4 */
+#projectGrid .card:nth-child(8) {
+  grid-column: 4;
+}
+
+/* Card 9 → column 5 */
+#projectGrid .card:nth-child(9) {
+  grid-column: 5;
+}
+
+/* ---- RESPONSIVE FALLBACKS ---- */
+
+@media (max-width: 1200px) {
+  #projectGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #projectGrid .card {
+    grid-column: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #projectGrid {
+    grid-template-columns: 1fr;
+  }
+}
