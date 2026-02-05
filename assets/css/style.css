@@ -404,27 +404,30 @@ html.dark-mode #darkToggle {
   line-height: 1.25;
 }
 
-/* ---- CENTER THE BOTTOM ROW (CARDS 6–9) ---- */
+/* ---- CENTERED BOTTOM ROW (CARDS 6–9) ---- */
 
-/* Card 6 → column 2 */
-#projectGrid .card:nth-child(6) {
-  grid-column: 2;
+/* Wrap bottom row visually */
+#projectGrid .card:nth-child(n+6) {
+  grid-row: 2;
 }
 
-/* Card 7 → column 3 */
-#projectGrid .card:nth-child(7) {
-  grid-column: 3;
+/* Place them in columns 2–5 */
+#projectGrid .card:nth-child(6) { grid-column: 2; }
+#projectGrid .card:nth-child(7) { grid-column: 3; }
+#projectGrid .card:nth-child(8) { grid-column: 4; }
+#projectGrid .card:nth-child(9) { grid-column: 5; }
+
+/* Add visual centering balance */
+#projectGrid {
+  justify-items: center;
 }
 
-/* Card 8 → column 4 */
-#projectGrid .card:nth-child(8) {
-  grid-column: 4;
+/* Slightly shrink cards so spacing reads centered */
+#projectGrid .card {
+  width: 100%;
+  max-width: 210px;
 }
 
-/* Card 9 → column 5 */
-#projectGrid .card:nth-child(9) {
-  grid-column: 5;
-}
 
 /* ---- RESPONSIVE FALLBACKS ---- */
 
