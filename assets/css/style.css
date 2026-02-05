@@ -192,4 +192,41 @@ body {
     max-width: 1000px;
   }
 }
+/* ==================================
+   PROJECT PAGE MEDIA (CLEAN + CONSISTENT)
+   ================================== */
+
+.project-page figure {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.project-page img,
+.project-page video {
+  width: 100%;
+  max-width: 720px;     /* KEY: prevents oversized media */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Landscape videos */
+.project-page video.landscape {
+  aspect-ratio: 16 / 9;
+}
+
+/* Vertical / phone videos */
+.project-page video.vertical {
+  max-width: 420px;
+  aspect-ratio: 9 / 16;
+}
+
+/* Captions */
+.project-page figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
 
