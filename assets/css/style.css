@@ -1,454 +1,174 @@
-/* ==========================
-   Organized & Cleaned style.css
-   By ChatGPT — optimized for clarity
-   ========================== */
+/* ===========================
+   PROJECT-FORWARD LEFT/RIGHT
+   =========================== */
 
-/* ----------------------------------
-   1. ROOT VARIABLES
-   ---------------------------------- */
 :root {
   --bg: #f6f7fb;
-  --card: #ffffff;
+  --card: #fff;
   --text: #0f1724;
   --muted: #6b7280;
   --accent: #0ea5a4;
-  --hero-bg: linear-gradient(135deg, #0f1724 0%, #0ea5a4 100%);
-}
-
-/* Dark Mode Variables */
-html.dark-mode {
-  --bg: #0b0f15;
-  --card: #0f1724;
-  --text: #e6eef6;
-  --muted: #9aa4b2;
-  --accent: #06b6d4;
-}
-
-/*html.dark-mode {
-  --bg-color: #111;
-  --text-color: #fff;
-}
-
-html.dark-mode body {
-  background: var(--bg-color);
-  color: var(--text-color);
-}*/
-
-html.dark {
-  --bg: #0b0f15;
-  --card: #0f1724;
-  --text: #e6eef6;
-  --muted: #9aa4b2;
-  --accent: #06b6d4;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* ----------------------------------
-   2. GLOBAL RESET & LAYOUT
-   ---------------------------------- */
-body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   margin: 0;
   background: var(--bg);
   color: var(--text);
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* ----------------------------------
-   3. NAVIGATION BAR
-   ---------------------------------- */
+/* NAVIGATION */
 .nav-wrap {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,.9);
   backdrop-filter: blur(6px);
-  z-index: 40;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  z-index: 50;
 }
-
-html.dark-mode .nav-wrap {
-  background: rgba(15,23,36,0.75);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
 .nav-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: .5rem 0;
+  align-items: center;
+  padding: .8rem 1rem;
 }
-
 .brand {
   font-weight: 700;
-  color: var(--text);
   text-decoration: none;
+  color: var(--text);
 }
-
-.site-nav {
-  display: flex;
-  gap: 1rem;
-}
-
 .site-nav a {
-  color: var(--text);
+  margin-left: 1rem;
   text-decoration: none;
-  padding: .3rem .5rem;
-  border-radius: 6px;
-}
-
-.site-nav a:hover {
-  background: rgba(14,165,164,0.08);
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-}
-
-/* ----------------------------------
-   4. HERO SECTION
-   ---------------------------------- */
-.hero {
-  padding: 3rem 0;
-  background: var(--hero-bg);
-  color: #fff;
-}
-
-.hero-inner {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.hero-text { flex: 1; }
-.lead { opacity: .95; }
-.cta-row { margin-top: 1rem; }
-
-.btn {
-  display: inline-block;
-  padding: .6rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.btn.primary {
-  background: #fff;
   color: var(--text);
-  font-weight: 600;
 }
 
-.btn.ghost {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #fff;
-}
-
-.metrics {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.metrics div {
-  background: rgba(255,255,255,0.06);
-  padding: .6rem;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.hero-image img {
-  width: 360px;
-  max-width: 100%;
-  border-radius: 12px;
-}
-
-/* Hero text color rules */
-.hero h1,
-.hero p,
-.hero .lead {
-  color: #ffffff;
-}
-
-html.dark-mode .hero h1,
-html.dark-mode .hero p,
-html.dark-mode .hero .lead {
-  color: #e6eef6;
-}
-
-/* ----------------------------------
-   5. DARK MODE TOGGLE BUTTON
-   ---------------------------------- */
-#darkToggle {
-  padding: 0.45rem 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(6px);
-  color: #0f1724;
-  transition: all 0.25s ease;
-}
-
-html.dark-mode #darkToggle {
-  background: rgba(15,23,36,0.75);
-  color: #e6eef6;
-}
-
-#darkToggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* ----------------------------------
-   6. MAIN GRID / CARDS
-   ---------------------------------- */
-.section { padding: 2rem 0; }
-.section h2 { margin-bottom: .3rem; }
-.section-sub { color: var(--muted); margin-bottom: 1rem; }
-
-.grid {
+/* LAYOUT GRID */
+.layout-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+  max-width: 1500px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ABOUT LEFT COLUMN */
+.about-section {
+  position: sticky;
+  top: 96px; /* sticks under navbar */
+}
+.about-section h1 {
+  margin: 0 0 .25rem;
+}
+.about-title {
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: .8rem;
+}
+.about-text {
+  font-size: .95rem;
+  margin-bottom: 1rem;
+}
+.about-links .btn {
+  margin-right: .7rem;
+}
+.about-metrics {
+  margin-top: 1.5rem;
+}
+.about-metrics div {
+  margin-bottom: .8rem;
+  font-size: .9rem;
+}
+
+/* PROJECTS RIGHT COLUMN */
+.projects-section {
+  width: 100%;
+}
+.projects-section h2 {
+  margin-bottom: .3rem;
+}
+.projects-section .section-sub {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* GRID OF PROJECT CARDS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
 }
 
+/* CARD STYLES */
 .card {
   background: var(--card);
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(12,15,20,0.06);
+  box-shadow: 0 6px 18px rgba(12,15,20,.06);
   text-decoration: none;
   color: inherit;
-  display: block;
-  transform: translateY(0);
-  transition: transform .25s ease, box-shadow .25s;
+  transition: transform .2s ease;
 }
-
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(2,6,23,0.3);
+  transform: translateY(-4px);
 }
-
 .card img {
   width: 100%;
-  height: 180px;
+  height: 140px;
   object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
-
-.card-body { padding: 1rem; }
-.card h3 { margin: 0 0 .4rem 0; }
-
-/* ----------------------------------
-   7. SNAPSHOT CARDS
-   ---------------------------------- */
-/*.snapshot { margin-top: 1rem; }
-.snapshot-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 1rem;
+.card-body {
+  padding: .8rem;
 }
-
-.snapshot-card {
-  background: var(--card);
-  padding: 1rem;
-  border-radius: 10px;
-}*/
-
-/* === CARD TAG === */
-.card-tag {
+.card h3 {
+  margin: .3rem 0;
+  font-size: 1rem;
+}
+.card-date {
   font-size: .75rem;
+  color: var(--muted);
+}
+.card-tag {
+  display: inline-block;
+  font-size: .7rem;
   font-weight: 600;
   padding: .2rem .4rem;
   border-radius: 6px;
-  display: inline-block;
-  margin-bottom: .4rem;
+  margin-bottom: .35rem;
 }
-
 .card-tag.team { background: #0ea5a4; color: white; }
-.card-tag.personal { background: #ef4444; color: white; }
 .card-tag.class { background: #3b82f6; color: white; }
+.card-tag.personal { background: #ef4444; color: white; }
 
-/* === SKILLS LIST === */
-.skills {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .3rem .5rem;
-  margin: .4rem 0 .6rem 0;
+/* CONTACT SECTION */
+.contact-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+.contact-section a {
+  color: var(--accent);
 }
 
-.skills li {
-  font-size: .72rem;
-  padding: .2rem .45rem;
-  background: rgba(0,0,0,0.06);
-  border-radius: 6px;
-}
-
-.dark-mode .skills li {
-  background: rgba(255,255,255,0.12);
-}
-
-.card-date {
-  font-size: .78rem;
-  color: var(--muted);
-  margin-bottom: .4rem;
-  display: block;
-}
-
-.dark-mode .card-date {
-  color: #c8d0d8;
-}
-
-/* ----------------------------------
-   8. PROJECT PAGES
-   ---------------------------------- */
-.project-page img { margin-bottom: 1rem; }
-
-/* Responsive Video */
-.project-page video {
-  width: 100%;
-  max-width: 900px;
-  display: block;
-  margin: 0 auto 1rem auto;
-  border-radius: 10px;
-}
-.project-page video {
-  object-fit: contain;
-  aspect-ratio: 16/9;
-}
-
-.project-page video {
-  object-fit: contain;
-  aspect-ratio: 9/16;
-}
-
-/* === Global Media Styling for Project Pages === */
-.project-page img,
-.project-page video {
-  width: 100%;               /* Scale to container width */
-  max-width: 900px;          /* Prevent giant media */
-  display: block;            /* Remove inline gaps */
-  margin: 1rem auto;         /* Center + spacing */
-  border-radius: 10px;       /* Keep rounded corners */
-  object-fit: contain;       /* Prevent stretching */
-}
-
-
-/* ----------------------------------
-   9. BLOG
-   ---------------------------------- */
-.post-list { list-style: none; padding: 0; }
-.post-list li { padding: .5rem 0; }
-
-/* ----------------------------------
-   10. FOOTER
-   ---------------------------------- */
+/* FOOTER */
 .footer {
   background: #0f1724;
   color: #fff;
   padding: 1.5rem;
-  margin-top: 2rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
-/* ----------------------------------
-   11. RESPONSIVE STYLES
-   ---------------------------------- */
-@media(max-width: 900px) {
-  .hero-inner { flex-direction: column; }
-  .site-nav { display: none; }
-  .hamburger { display: block; }
-}
-
-/* =========================================================
-   5 + 4 PROJECT GRID (9 CARDS TOTAL)
-   ========================================================= */
-
-#projectGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
-}
-
-/* Make cards compact so all fit */
-#projectGrid .card img {
-  height: 110px;
-}
-
-#projectGrid .card-body {
-  padding: 0.55rem;
-}
-
-#projectGrid h3 {
-  font-size: 0.9rem;
-  line-height: 1.2;
-}
-
-#projectGrid p {
-  font-size: 0.78rem;
-  line-height: 1.25;
-}
-
-/* ---- CENTERED BOTTOM ROW (CARDS 6–9) ---- */
-
-/* Wrap bottom row visually */
-#projectGrid .card:nth-child(n+6) {
-  grid-row: 2;
-}
-
-/* Place them in columns 2–5 */
-#projectGrid .card:nth-child(6) { grid-column: 2; }
-#projectGrid .card:nth-child(7) { grid-column: 3; }
-#projectGrid .card:nth-child(8) { grid-column: 4; }
-#projectGrid .card:nth-child(9) { grid-column: 5; }
-
-/* Add visual centering balance */
-#projectGrid {
-  justify-items: center;
-}
-
-/* Slightly shrink cards so spacing reads centered */
-#projectGrid .card {
-  width: 100%;
-  max-width: 210px;
-}
-
-
-/* ---- RESPONSIVE FALLBACKS ---- */
-
-@media (max-width: 1200px) {
-  #projectGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  #projectGrid .card {
-    grid-column: auto !important;
-  }
-}
-
-@media (max-width: 768px) {
-  #projectGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  #projectGrid {
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .layout-container {
     grid-template-columns: 1fr;
+  }
+  .about-section {
+    position: relative;
+    top: auto;
+    margin-bottom: 2rem;
   }
 }
