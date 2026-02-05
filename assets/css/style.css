@@ -230,3 +230,9 @@ body {
   margin-top: 0.5rem;
 }
 
+/* === PROJECT PAGE CONTENT WIDTH === */
+.project-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
