@@ -38,4 +38,86 @@
       <li>ANSYS Mechanical</li>
       <li>Topology Optimization</li>
       <li>Finite Element Analysis</li>
-      <li>Composite S
+      <li>Composite Structures</li>
+      <li>Lightweight Design</li>
+    </ul>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2>Overview</h2>
+    <p>
+      As part of the <strong>DARPA Heavy Lift Challenge Team</strong>, I worked on
+      the structural design and optimization of drone components intended to
+      support extreme payload-to-weight ratios.
+    </p>
+
+    <p>
+      My primary responsibility focused on using <strong>ANSYS Mechanical</strong>
+      to evaluate load paths, identify stress concentrations, and apply
+      <strong>topology optimization</strong> techniques to reduce mass while
+      maintaining structural integrity.
+    </p>
+  </section>
+
+  <!-- FEA SECTION -->
+  <section class="section">
+    <h2>Finite Element Analysis (FEA)</h2>
+
+    <p>
+      Initial designs were validated using static structural simulations to
+      quantify total deformation and von Mises stress under representative load
+      cases derived from flight and payload conditions.
+    </p>
+
+    <figure class="media-block">
+      <img src="../assets/images/deformation_test.gif" alt="Total deformation FEA result">
+      <figcaption>Total deformation results under applied loading.</figcaption>
+    </figure>
+
+    <figure class="media-block">
+      <img src="../assets/images/stress_test.gif" alt="Equivalent stress FEA result">
+      <figcaption>Equivalent (von Mises) stress distribution identifying critical regions.</figcaption>
+    </figure>
+  </section>
+
+  <!-- TOPOLOGY OPTIMIZATION -->
+  <section class="section">
+    <h2>Topology Optimization</h2>
+
+    <p>
+      To further reduce mass, topology optimization was performed with retained
+      volume constraints to preserve stiffness while removing low-stress material.
+      This allowed the team to converge on efficient load-bearing geometries
+      suitable for composite or foam-core manufacturing.
+    </p>
+
+    <figure class="media-block">
+      <img src="../assets/images/TO_25%_retained_threshold_H100_Divinycell_Foam.png"
+           alt="Topology optimization result">
+      <figcaption>
+        Topology optimization result showing retained material regions
+        at a 25% threshold.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="section">
+    <h2>Engineering Impact</h2>
+    <ul>
+      <li>Reduced structural mass while maintaining load capacity</li>
+      <li>Improved understanding of real load paths in drone airframes</li>
+      <li>Enabled design decisions compatible with advanced manufacturing</li>
+      <li>Strengthened simulation-driven design workflow</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">© 2025 John Santosuosso</div>
+</footer>
+
+</body>
+</html>
