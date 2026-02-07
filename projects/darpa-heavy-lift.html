@@ -15,7 +15,7 @@
 
 <header class="nav-wrap">
   <div class="container nav-inner">
-    <a class="brand" href="../portfolio/index.html">Back</a>
+    <a class="brand" href="../index.html">Back</a>
     <nav class="site-nav">
       <a href="../index.html#projects">Projects</a>
       <a href="../resume.html">Resume</a>
@@ -68,8 +68,9 @@
     <p>
       To determine the superior design of our drone arms, we are performing topology optimization with retained
       volume constraints to preserve stiffness while removing low-stress material.
-      This allowed the team to converge on efficient load-bearing geometries
-      suitable for composite or foam-core manufacturing.
+      We are currently deciding between two main arm designs: twin plates made of DragonPlate (Carbon fiber for tension with Divinycell H100 foam sandwiched between for compression)
+      or carbon fiber tubes. I am currently testing plate effectiveness, below is one of the current designs. Please note that the Ansys work shown on this page is only using foam as a material to optimize arm shape, 
+      though I have recently started incorporating carbon fiber in my simulations for better design comparisons. 
     </p>
 
     <figure class="media-block">
@@ -89,7 +90,9 @@
     <p>
       Designs were validated using static structural simulations to
       quantify total deformation and von Mises stress under representative load
-      cases derived from flight and payload conditions.
+      cases derived from flight and payload conditions. Mass considerations are crucial at this point in our design. 
+      We are carefully working to maintain a mass budget allocated to structures. As of right now, the tube design is about half as light, but the plates handle stress much better. 
+      I will be sure to update the page as we finalize our arm design. Below is how the topology optimized plate performed during simulation:
     </p>
 
     <figure class="media-block">
