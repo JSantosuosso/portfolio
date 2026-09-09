@@ -34,17 +34,20 @@
 <h2>Mechanical Design</h2>
     <h3>Arm Requirements </h3>
       <ul>
-        <li>Wheels must be able to rotate 360 degrees about arm longitudinal axis</li>
+        <li>Motors must be able to drive wheels about arm longitudinal axis in drive mode</li>
         <li>Wheel/propeller ends must be able to rotate 90 degrees from perpendicular to ground to parallel</li>
         <li>Wheel outer diameter must be greater than props', such that they do not hit the ground</li>
-        <li>Arms must be able to withstand 2.5 kg (5.5 lb) of thrust at ends</li>
+        <li>Arms must be able to withstand 2.5 kg (5.5 lb) of thrust at ends (driven by propulsion lead's max prop thrust of 10 kg)</li>
         <li>Arms must be able to support the robot when driving</li>
       </ul>
     <p>The arm design was the core of the project. The difficulty was providing the motions necessary without impairing wiring.</p>
     <p>To actuate the 90 degree rotation of the ends, I selected a rack and pinion system. This was chosen due to the high torque 
       density of gear systems, reliability and compatibility with hardware we already had (25kg servos). We tested and ruled out bevel gear systems 
       due to their complexity and redundancy - we would need twice as many actuators for its desgin. An ABENICS (Active Ball Joint Mechanism With Three DoF) setup was tested, 
-      but it was overruled due to their complexity and poor power transmission.</p>
+      but it was overruled due to their complexity and poor power transmission. The rack and pinion system functioned as shown below.</p>
+    <p>The ends of the arms were designed to allow wheel rotation and well as be driven by small motors, while also mounting the drone motors with rotors 
+      spinning coxially with the wheels. The wheels had teeth on their underside, which would mesh with gears on their respective motors when in drive mode. 
+      The </p>
     <h3>Frame Requirements</h3>
       <ul>
         <li>Robot weight is less than or equal to 5 kg (11 lb.) (driven by propulsion lead's max prop thrust of 10 kg)</li>
