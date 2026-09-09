@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VT CRO — John Santosuosso</title>
+<title>VT CRO Bimodal Robot — John Santosuosso</title>
 <script>
   // Load saved theme before page renders
   (function() {
@@ -26,11 +26,24 @@
 <img src="../assets/images/cansat_logo.jpg" alt="cansat logo" style="width:180px;margin-top:1rem;" />-->
 
 <h2>Mission</h2>
-<p>Work in progress! Research and design an autonomous bimodal modes of land and air travel without assistance. The robot will be capable of flying 400 ft above ground level (legal limit set by the FAA) as well as overland driving. The goal is to perform reconaissance and mapping, and potentially deliver a payload such as medical supplies to support search and rescue applications.</p>
+<p>Design a bimodal robot transitioning from land navigation to flight. My main roles on this were mechanical design, primarily on the transition and the frame, as well as selecting flight hardware and sensor integration.</p>
   
 <h2>Design Overview</h2>
-<p>The robot is still in development; research is still being conducted. The current plan is to utilize a quadcopter-like design, where propellers will transition to wheels for land-based driving. Design goals include minimizing size and weight as well as over-actuation while maintaining fluid transitions. The robot's autonomy will be powered by a Unitree 4D Lidar L2 and an NVIDIA Jetson Nano using ROS and interfacing with a Pixhawk 6C for flight and a Teensy 4.0 microcontroller for land drive. </p>
+<p>The robot frame and transition mechanisms were 3D printed with PLA. Land navigation was powered by 4 DC motors, mounted on the underside of the robot's arms. The robot's autonomy was powered by a Unitree 4D Lidar L2 and an NVIDIA Jetson Nano using ROS2 and interfacing with a Pixhawk 6C for flight and a Teensy 4.0 microcontroller for land drive. </p>
 
+<h2>Mechanical Design</h2>
+    <h3>Frame Requirements</h3>
+      <ul>
+        <li>1. Robot weight is less than or equal to 5 kg (11 lb.)</li>
+        <li>2. Frame must support flight hardware (driven by electrical subteam hardware selection)</li>
+        <li>3. Frame must be able to allow arms to be installed and replaced easily (driven by arm design)</li>
+      </ul>
+    <p>The frame was developed using Fusion360, with its FEA performed on it to test response to propeller thrust of 2.5 kg (5.5 lb.) on each arm. The total thrust of the drone's props was 10 kg, from which we derived our max weight requirement. The factor of
+      safety of 2 is admittedly arbitrary - ChatGPT recommended it. Topology optimization was performed to optimize for mass below this weight. 
+      Fasteners are used to connect the arms to the frame, allowing for easy install. Removable arms were chosen given the frequency of arm design updates, the size of prints
+    being too large to fit continuous pieces, and easy replacement of broken members during testing.</p>
+    <p>The frame conformed to all requirements. It weighed 4 kg (8.8 lb.), allowed mounting of avionics and BMS, and permitted easy installation and replacement of arms.</p>
+  
 <h2>My Current Work: Modular Chassis and Developing Flight Mode</h2>
 <p>The robot is currently a quadcopter, but with the system being developed, will be able to easily incorporate additional rotors. The design aims to allow for the robot to be assembled from parts in minutes, coming together quickly with nuts and bolts and allowing for customization.</p>
 <p>Electronics for our robot have been carefully selected. The Pixhawk 6C flight controller will interface with the Jetson, as well as a GPS sensor and applicable radios for telemetry, ground controller communication, and teleop. To transition between modes, the rotors will rotate as necessary and the appropriate control system will take over (e.g. Jetson will use either Pixhawk or Teensy.)</p>
