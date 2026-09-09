@@ -32,6 +32,18 @@
 <p>The robot frame and transition mechanisms were 3D printed with PLA. Land navigation was powered by 4 DC motors, mounted on the underside of the robot's arms. The robot's autonomy was powered by a Unitree 4D Lidar L2 and an NVIDIA Jetson Nano using ROS2 and interfacing with a Pixhawk 6C for flight and a Teensy 4.0 microcontroller for land drive. </p>
 
 <h2>Mechanical Design</h2>
+    <h3>Frame Requirements</h3>
+      <ul>
+        <li>Robot weight is less than or equal to 5 kg (11 lb.) (driven by propulsion lead's max prop thrust of 10 kg)</li>
+        <li>Frame must support flight hardware (driven by electrical subteam hardware selection)</li>
+        <li>Frame must be able to allow arms to be installed and replaced easily (driven by arm design)</li>
+      </ul>
+    <p>The frame was developed using Fusion360, with its FEA performed on it to test response to propeller thrust of 2.5 kg (5.5 lb.) on each arm. The total thrust of the drone's props was 10 kg, from which we derived our max weight requirement. The factor of
+      safety of 2 is admittedly arbitrary - ChatGPT recommended it. Topology optimization was performed to optimize for mass below this weight. 
+      Fasteners are used to connect the arms to the frame, allowing for easy install. Removable arms were chosen given the frequency of arm design updates, the size of prints
+    being too large to fit continuous pieces, and easy replacement of broken members during testing.</p>
+    <p>The frame conformed to all requirements. It weighed 4 kg (8.8 lb.) including all other hardware, allowed mounting of avionics and BMS, and permitted easy installation and replacement of arms.</p>
+
     <h3>Arm Requirements </h3>
       <ul>
         <li>Motors must be able to drive wheels about arm longitudinal axis in drive mode</li>
@@ -44,22 +56,12 @@
     <p>To actuate the 90 degree rotation of the ends, I selected a rack and pinion system. This was chosen due to the high torque 
       density of gear systems, reliability and compatibility with hardware we already had (25kg servos). We tested and ruled out bevel gear systems 
       due to their complexity and redundancy - we would need twice as many actuators for its desgin. An ABENICS (Active Ball Joint Mechanism With Three DoF) setup was tested, 
-      but it was overruled due to their complexity and poor power transmission. The rack and pinion system functioned as shown below.</p>
+      but it was overruled due to its complexity and poor power transmission. The rack and pinion system functioned by having a servo drive the pinion gear, and the rack was linked with the connector as shown below.</p>
     <p>The ends of the arms were designed to allow wheel rotation and well as be driven by small motors, while also mounting the drone motors with rotors 
-      spinning coxially with the wheels. The wheels had teeth on their underside, which would mesh with gears on their respective motors when in drive mode. 
-      The </p>
-    <h3>Frame Requirements</h3>
-      <ul>
-        <li>Robot weight is less than or equal to 5 kg (11 lb.) (driven by propulsion lead's max prop thrust of 10 kg)</li>
-        <li>Frame must support flight hardware (driven by electrical subteam hardware selection)</li>
-        <li>Frame must be able to allow arms to be installed and replaced easily (driven by arm design)</li>
-      </ul>
-    <p>The frame was developed using Fusion360, with its FEA performed on it to test response to propeller thrust of 2.5 kg (5.5 lb.) on each arm. The total thrust of the drone's props was 10 kg, from which we derived our max weight requirement. The factor of
-      safety of 2 is admittedly arbitrary - ChatGPT recommended it. Topology optimization was performed to optimize for mass below this weight. 
-      Fasteners are used to connect the arms to the frame, allowing for easy install. Removable arms were chosen given the frequency of arm design updates, the size of prints
-    being too large to fit continuous pieces, and easy replacement of broken members during testing.</p>
-    <p>The frame conformed to all requirements. It weighed 4 kg (8.8 lb.) including all other hardware, allowed mounting of avionics and BMS, and permitted easy installation and replacement of arms.</p>
-  
+      spinning coxially with the wheels. The wheels had teeth on their underside, which would mesh with gears on their respective motors when in drive mode.</p>
+    <p>The wheels successfully meshed with the drive gears in drive mode, and could be driven. The ends successfully rotated 90 degrees when the robot was suspended. 
+    Further testing was unable to be completed, as explained in outcomes.</p>
+    
 <h2>Avionics Hardware Selection</h2>
     <h3>Requirements</h3>
     <ul>
@@ -76,10 +78,10 @@
 <!--<img src="../assets/images/bimodal.png" alt="Bimodal Robot Demo" style="width:100%;border-radius:10px;margin-top:.5rem;"/>
 <img src="../assets/images/updated.jpeg" alt="Bimodal Robot Demo Updated" style="width:100%;border-radius:10px;margin-top:.5rem;"/>-->
   
-<h2>My Old Work: Vertical Buoyancy System</h2>
+<!--<h2>My Old Work: Vertical Buoyancy System</h2>
 <p>Formerly, this project was to produce a trimodal robot, with an additional marine mode. I was working on the underwater team, and produced the following system.</p>
 <p>Using a 500 mL syringe, 45 kg high-torque servo, and PLA to design, 3D print, and assemble a syringe-pump system. A the servo uses a rack and pinion mechanism to alter the depth of the syringe plunger. To test the system, an ESP32 will control the servo's position, and therefore varying the system's density by taking in ballast water to alter system buoyancy. The necessary components will be waterproofed. An additional water-proofed ESP32 controller using pushbuttons will communicate with the system's controller, creating a tether-free, waterproof connection.</p>
-<img src="../assets/images/vbs.jpeg" alt="VBS System" style="width:100%;border-radius:10px;margin-top:.5rem;"/>
+<img src="../assets/images/vbs.jpeg" alt="VBS System" style="width:100%;border-radius:10px;margin-top:.5rem;"/>-->
 
 <!--<h2>Reports & Documentation</h2>
 <ul>
@@ -89,7 +91,19 @@
 
 
 <h2>Outcome</h2>
-<p>A battery explosion in the lab destroyed this robot. An adjacent team's battery was next to our workstation, and destroyed our hardware. While we were able to demonstrate successful transitions for individual ends, we never got the chance to test this for the whole robot.</p>
+<p>A battery explosion in the lab destroyed this robot. An adjacent team's battery was next to our workstation, and destroyed our hardware. 
+  As such, we did not get to complete this project.</p>
+<p>This project faced many difficulties. For the first half of the school year, the robot was being designed to include a third aquatic mode. I had worked on this once I was on 
+  the team. I devised an experiment to test the validity of a ballast system (simplely designed, using a 500 mL syringe, 45kg servo, a rack and pinion system, and an ESP32 for control
+  and DAQ), but this was ultimately not needed. 
+  Our chief engineer left the project around the halfway point, and we had to pivot sharply. Our new lead changed the project to bimodal, and we restarted work. I moved
+  to working on mechanical design. The electrical team hardware selections (e.g., motors, battery) drove mechanical design, and we had to work fast to provide the software team with 
+  a URDF file they could use in simulation. In this speed, the work was not refined.</p>
+<p>When the battery destroyed our work, the project was crippled. The above picture shows the final state of the robot, which was used for a demo of arm functionality. 
+With our flight hardware destroyed, the robot never flew.</p>
+    <p> I was unsatisfied with the conclusion of the project, and I want to make changes. I was promoted to the mechanical lead role, and I want our work this year to eclipse
+    that of last year (see project HIVE). We recently finished recruitment. Between individual headhunting and outreach events, we received 192 applications to our team, 
+    more than double the amount of the previous year. I look forward to us all improving CROLabs before my graudation this spring.</p>
   </div>
 </main>
 <footer class="footer"><div class="container">© 2026 John Santosuosso</div></footer>
