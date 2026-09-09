@@ -24,6 +24,7 @@
   
 <!--<img src="../assets/images/probe.png" alt="cansat probe" style="width:100%;border-radius:10px;" />
 <img src="../assets/images/cansat_logo.jpg" alt="cansat logo" style="width:180px;margin-top:1rem;" />-->
+<img src="../assets/images/crobot.png" alt="robot" style="width:100%;border-radius:10px;" />
 
 <h2>Mission</h2>
 <p>Design a bimodal robot capable of transitioning between land navigation and flight. My main roles on this were mechanical design, primarily on the transition and the frame, as well as designing part of the avionics system.</p>
@@ -56,7 +57,8 @@
     <p>To actuate the 90 degree rotation of the ends, I selected a rack and pinion system. This was chosen due to the high torque 
       density of gear systems, reliability and compatibility with hardware we already had (25kg servos). We tested and ruled out bevel gear systems 
       due to their complexity and redundancy - we would need twice as many actuators for its desgin. An ABENICS (Active Ball Joint Mechanism With Three DoF) setup was tested, 
-      but it was overruled due to its complexity and poor power transmission. The rack and pinion system functioned by having a servo drive the pinion gear, and the rack was linked with the connector as shown below.</p>
+      but it was overruled due to its complexity and poor power transmission. The rack and pinion system functioned by having a servo drive the pinion gear, and the rack was linked with the connector (see below).</p>
+    <img src="../assets/images/arm_SV.png" alt="arm section view" style="width:100%;border-radius:10px;" />
     <p>The ends of the arms were designed to allow wheel rotation and well as be driven by small motors, while also mounting the drone motors with rotors 
       spinning coxially with the wheels. The wheels had teeth on their underside, which would mesh with gears on their respective motors when in drive mode.</p>
     <p>The wheels successfully meshed with the drive gears in drive mode, and could be driven. The ends successfully rotated 90 degrees when the robot was suspended. 
@@ -99,6 +101,7 @@
   Our chief engineer left the project around the halfway point, and we had to pivot sharply. Our new lead changed the project to bimodal, and we restarted work. I moved
   to working on mechanical design. The electrical team hardware selections (e.g., motors, battery) drove mechanical design, and we had to work fast to provide the software team with 
   a URDF file they could use in simulation. In this speed, the work was not refined.</p>
+    <img src="../assets/images/physical.webp" alt="robot" style="width:100%;border-radius:10px;" />
 <p>When the battery destroyed our work, the project was crippled. The above picture shows the final state of the robot, which was used for a demo of arm functionality. 
 With our flight hardware destroyed, the robot never flew.</p>
     <p> I was unsatisfied with the conclusion of the project, and I want to make changes. I was promoted to the CROLabs mechanical lead role, and I want our work this year to eclipse
